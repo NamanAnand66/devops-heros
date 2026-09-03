@@ -119,9 +119,6 @@ curl http://localhost:8085
 - **Overlay Networks**: Distributed network driver used across multiple Docker daemon hosts (typically in Docker Swarm mode or multi-node clusters).
 - **Functionality**: Creates a virtual VXLAN overlay network on top of underlying host-to-host physical network infrastructure, enabling containers on different physical nodes to communicate securely with encrypted IPsec tunnels without host port mapping.
 
-#### Task Screenshot & Evidence
-![Screenshot: Docker Overlay Network architecture diagram & Swarm network inspection](./screenshots/task4_overlay_network_diagram.png)
-
 ---
 
 ## Session Resources

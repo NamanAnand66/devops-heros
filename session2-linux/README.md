@@ -34,7 +34,7 @@ ls -li original.txt soft_link.txt hard_link.txt
 ```
 
 #### Task Screenshot & Evidence
-![Screenshot: Creating and deleting soft and hard links (ls -li inode output)](./screenshots/task1_links_output.png)
+![Screenshot: Creating and deleting soft and hard links (ls -li inode output)](./screenshots/task1.png)
 
 ---
 
@@ -56,7 +56,7 @@ sudo sysadminctl -addUser devops_user -fullName "DevOps User"
 ```
 
 #### Task Screenshot & Evidence
-![Screenshot: Creating test user using adduser command on Ubuntu](./screenshots/task2_adduser_output.png)
+![Screenshot: Creating test user using adduser command on Ubuntu](./screenshots/task2.png)
 
 ---
 
@@ -82,10 +82,6 @@ journalctl -b
 # Filter logs by priority (e.g., error level)
 journalctl -p err
 ```
-
-#### Task Screenshot & Evidence
-![Screenshot: Checking logs for a specific service using journalctl -u](./screenshots/task3_journalctl_output.png)
-
 ---
 
 ### Task 4: Essential Linux Commands Cheat Sheet
@@ -99,7 +95,7 @@ journalctl -p err
 - `top` / `htop`: Real-time system monitoring of CPU, RAM, and running tasks.
 
 #### Task Screenshot & Evidence
-![Screenshot: Linux Command Cheat Sheet Execution & Output](./screenshots/task4_cheat_sheet_output.png)
+![Screenshot: Linux Command Cheat Sheet Execution & Output](./screenshots/task4.png)
 
 ---
 

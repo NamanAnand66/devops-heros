@@ -21,6 +21,10 @@ Set up a 3-tier architecture (Frontend, Backend, Database) across isolated custo
 
 #### Step-by-Step Execution Commands
 ```bash
+# (Optional) Clean up existing containers/networks if re-running
+docker rm -f frontend-container backend-container database-container 2>/dev/null || true
+docker network rm frontend-net backend-net db-net 2>/dev/null || true
+
 # 1. Create 3 isolated Docker bridge networks
 docker network create frontend-net
 docker network create backend-net
@@ -32,8 +36,9 @@ docker run -d --name database-container --network db-net -e MYSQL_ROOT_PASSWORD=
 # 3. Run Backend container on backend-net
 docker run -d --name backend-container --network backend-net alpine sleep 3600
 
-# 4. Attach Backend container to frontend-net as well (dual-homed container)
+# 4. Attach Backend container to frontend-net and db-net (dual-homed container)
 docker network connect frontend-net backend-container
+docker network connect db-net backend-container
 
 # 5. Run Frontend container on frontend-net
 docker run -d --name frontend-container --network frontend-net nginx:alpine
@@ -46,11 +51,11 @@ docker exec -it frontend-container ping -c 2 backend-container
 docker exec -it backend-container ping -c 2 database-container
 
 # Frontend CANNOT reach Database directly (Network Isolation enforced):
-docker exec -it frontend-container ping -c 2 database-container  # Fails as expected
+docker exec -it frontend-container ping -c 2 database-container  # Fails as expected (bad address)
 ```
 
 #### Task Screenshot & Evidence
-![Screenshot: Multi-network container ping connectivity and network isolation test](./screenshots/task1_network_connectivity.png)
+![Screenshot: Multi-network container ping connectivity and network isolation test](./screenshots/task1_ping.png)
 
 ---
 
@@ -71,7 +76,7 @@ curl http://localhost:80
 ```
 
 #### Task Screenshot & Evidence
-![Screenshot: Accessing Apache website directly on Port 80 via Host Network mode](./screenshots/task2_host_network_apache.png)
+![Screenshot: Accessing Apache website directly on Port 80 via Host Network mode](./screenshots/task2_host_network.png)
 
 ---
 
@@ -89,21 +94,22 @@ cd ~/bind-mount-demo
 echo "<h1>Hello students</h1>" > index.html
 
 # 3. Run Nginx container with bind mount
+docker rm -f nginx-bind 2>/dev/null || true
 docker run -d --name nginx-bind -p 8085:80 -v $(pwd)/index.html:/usr/share/nginx/html/index.html:ro nginx:alpine
+sleep 2
 
 # 4. Verify initial webpage content
 curl http://localhost:8085
 
 # 5. Modify index.html on host machine
-echo "<h1>Hello students - Live Hot-Reloaded!</h1>" > index.html
+echo '<h1>Hello students - Live Hot-Reloaded!</h1>' > index.html
 
 # 6. Verify instant update without restarting container
 curl http://localhost:8085
 ```
 
 #### Task Screenshots & Evidence
-![Screenshot: Initial Nginx website content ('Hello students') via Bind Mount](./screenshots/task3_bind_mount_initial.png)
-![Screenshot: Live hot-reloaded webpage content after modifying index.html without restarting container](./screenshots/task3_bind_mount_updated.png)
+![Screenshot: Live hot-reloaded webpage content after modifying index.html without restarting container](./screenshots/task3_nginxstartup.png)
 
 ---
 

@@ -29,7 +29,7 @@ git commit -a -m "docs: update readme directly"
 ```
 
 #### Task Screenshot & Evidence
-![Screenshot: Testing and observing difference between git commit -m and git commit -a -m](./screenshots/task1_git_commit_difference.png)
+![Screenshot: Testing and observing difference between git commit -m and git commit -a -m](./screenshots/task1_difference.png)
 
 ---
 
@@ -70,8 +70,8 @@ git log --oneline -n 3
 ```
 
 #### Task Screenshots & Evidence
-![Screenshot: git log showing commits before cherry-pick on feature branch](./screenshots/task2_git_log_feature_branch.png)
-![Screenshot: git cherry-pick execution and verification git log on main branch](./screenshots/task2_cherry_pick_verification.png)
+![Screenshot: git log showing commits before cherry-pick on feature branch](./screenshots/task2_featurebranch.png)
+![Screenshot: git cherry-pick execution and verification git log on main branch](./screenshots/tas2_log.png)
 
 ---
 

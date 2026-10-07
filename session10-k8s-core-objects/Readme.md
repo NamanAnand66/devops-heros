@@ -103,12 +103,6 @@ kubectl scale deployment nginx-deployment --replicas=5
 # 6. Delete resources
 kubectl delete -f deployment.yml
 ```
-
-### Task Screenshots & Evidence
-![Screenshot: kubectl apply and kubectl get pods/deployments output](./screenshots/kubectl_get_pods_deployments.png)
-![Screenshot: kubectl expose service and NodePort accessibility in browser](./screenshots/kubectl_service_nodeport.png)
-![Screenshot: Dynamic replica scaling output via kubectl scale](./screenshots/kubectl_scale_replicas.png)
-
 ---
 
 ## Useful Resources

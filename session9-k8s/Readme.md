@@ -69,12 +69,6 @@ kubectl cluster-info
 # 5. Open Minikube Dashboard
 minikube dashboard
 ```
-
-### Task Screenshots & Evidence
-![Screenshot: minikube start and status execution output](./screenshots/minikube_start_status.png)
-![Screenshot: kubectl get nodes and cluster-info output](./screenshots/kubectl_nodes_clusterinfo.png)
-![Screenshot: Minikube Web Dashboard GUI in Browser](./screenshots/minikube_dashboard.png)
-
 ---
 
 ## Useful Resources

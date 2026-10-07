@@ -124,7 +124,6 @@ docker rmi -f $(docker images -q)
 # System-wide Docker cleanup (prune unused volumes, networks, images, containers)
 docker system prune -a --volumes
 ```
-![Screenshot: Docker cleanup commands execution output](./screenshots/docker_cleanup_output.png)
 
 ---
 

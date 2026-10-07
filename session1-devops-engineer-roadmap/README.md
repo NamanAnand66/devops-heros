@@ -25,11 +25,6 @@ This session introduces the fundamental concepts of DevOps, culture, responsibil
 
 ---
 
-## Task Screenshots & Evidence
-![Screenshot: DevOps Engineer Learning Roadmap Overview](./screenshots/devops_roadmap_overview.png)
-
----
-
 ## Resources & Materials
 - [DevOps Roadmap Presentation PDF](./devops1-83.pdf)
 - [Session 1 Notes](./session1.md)

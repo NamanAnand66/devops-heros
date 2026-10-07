@@ -62,7 +62,6 @@ GitOps means managing deployments using configuration stored in Git.
 Edit YAML → Commit → Push → GitHub → Argo CD → Kubernetes
 ```
 
-Repository: [vedanshun05/gitops-demo](https://github.com/vedanshun05/gitops-demo).
 Cluster: `kind-session20`. Argo CD namespace: `argocd`. App namespace: `session20`.
 
 Git change: **5 → 3 replicas**, automatically synchronized.
